@@ -1,14 +1,108 @@
 ---
-title: "Untitled"
+title: "@ Alberta"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+    theme: flatly
 ---
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
 ```
+
+Overview
+===================================== 
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Summary
+
+Alberta is a western province of Canada. With an estimated population of 4,196,457 as of July 1, 2015, it is Canada's fourth-most populous province and the most populous of Canada's three prairie provinces. Its area is about 660,000 square kilometres (250,000 sq mi). Alberta and its neighbour Saskatchewan were districts of the Northwest Territories until they were established as provinces on September 1, 1905. The premier has been Rachel Notley since May 2015.
+
+Alberta's capital, Edmonton, is near the geographic centre of the province and is the primary supply and service hub for Canada's crude oil, oil sands (Athabasca oil sands) and other northern resource industries.
+
+About 290 km (180 mi) south of the capital is Calgary, the largest city in Alberta. Calgary and Edmonton centre Alberta's two census metropolitan areas, both of which have populations exceeding one million,[9] while the province has 16 census agglomerations. Tourist destinations in the province include Banff, Canmore, Drumheller, Jasper and Sylvan Lake.
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+
+### Alberta Area
+
+```{r}
+library("leaflet")
+
+m <- leaflet()
+m <- addTiles(m)
+
+# Cities 
+m <- addMarkers(m, lng=-113.4909, lat=53.5444, popup="Edmonton is a cultural, governmental and educational centre. It hosts a year-round slate of festivals, reflected in the nickname Canadas Festival City. It is home to North America\'s largest mall, West Edmonton Mall (the world\'s largest mall from 1981 until 2004),[20] and Fort Edmonton Park, Canada\'s largest living history museum.")
+
+m <- addMarkers(m, lng=-114.0618, lat=51.0480, popup="Calgary is a city in the Canadian province of Alberta. It is situated at the confluence of the Bow River and the Elbow River in the south of the province, in an area of foothills and prairie, about 80 km (50 mi) east of the front ranges of the Canadian Rockies. In the 2011 census, the City of Calgary had a population of 1,096,833 and a metropolitan population of 1,214,839, making it the largest city in Alberta, and the third-largest municipality and fifth-largest census metropolitan area (CMA) in Canada.
+
+The economy of Calgary includes activity in the energy, financial services, film and television, transportation and logistics, technology, manufacturing, aerospace, health and wellness, retail, and tourism sectors.[11] The Calgary CMA is home to the second-highest number of corporate head offices in Canada among the country's 800 largest corporations.")
+
+m <- addMarkers(m, lng=-111.2249, lat=56.43, popup="Fort McMurray is a population centre, technically classified as an urban service area, in the Regional Municipality (RM) of Wood Buffalo in Alberta, Canada.[12][13] It is located in northeast Alberta, in the middle of the Athabasca oil sands, surrounded by boreal forest. It has played a significant role in the development of the national petroleum industry. A severe wildfire in May 2016 led to the evacuation of its residents and caused widespread damage.
+
+Formerly a city, Fort McMurray became an urban service area when it amalgamated with Improvement District No. 143 on April 1, 1995, to create the Municipality of Wood Buffalo (renamed the RM of Wood Buffalo on August 14, 1996).[14] Despite its current official designation of urban service area, many locals, politicians and the media still refer to Fort McMurray as a city. Fort McMurray was known simply as McMurray between 1947 and 1962.")
+
+m <- addMarkers(m, lng=-118.4741, lat=55.1015, popup="Grande Prairie is a city in northwest Alberta, Canada within the southern portion of an area known as Peace River Country. It is located at the intersection of Highway 43 (part of the CANAMEX Corridor) and Highway 40 (the Bighorn Highway), approximately 456 km (283 mi) northwest of Edmonton. The city is surrounded by the County of Grande Prairie No. 1.
+
+Grande Prairie is the seventh-largest city in Alberta with a population of 55,032 recorded by the 2011 Census,[4] and was one of Canada's fastest growing cities between 2001 and 2006.[8]
+
+The city adopted the trumpeter swan as an official symbol due to its proximity to the migration route and summer nesting grounds of this bird. For that reason, Grande Prairie is sometimes nicknamed the \"Swan City\". The dinosaur has emerged as an unofficial symbol of the city due to paleontology discoveries in the areas north and west of the Grande Prairie.")
+# Tourism
+m <- addMarkers(m, lng=-114.5708, lat=49.1784, popup="Located 130 kilometers west of Calgary, Banff National Park is the most visited tourist attraction in the province of Alberta and perhaps the most impressive national park in Canada. The area encompasses some spectacular mountain scenery, major ski resorts, beautiful lakes, and the tourist town of Banff. Wildlife is abundant here, with grizzly bears, black bears, wolves, caribou, and elk, many of which are frequently sighted along the main highway through the park.
+
+Hiking is one of the main summer activities in Banff and there are many frontcountry and backcountry trails to choose from. However, many people explore the park from the comfort of their car, stopping at the numerous roadside lookouts that offer impressive views over the mountains, lakes, and glaciers.")
+
+# Places
+m <- addMarkers(m, lng=-113.675, lat=52.626, popup="The Calgary-Edmonton Corridor is one of the fastest growing regions in the country because of the surging wealth of oil during the early 21st century. A 2003 study by TD Bank Financial Group found the corridor is the only Canadian urban centre to amass a U.S. level of wealth while maintaining a Canadian-style quality of life, offering universal health care benefits. The study found GDP per capita in the corridor is 10% above average U.S. metropolitan areas and 40% above other Canadian cities. Much of this is because of large oil revenues.")
+
+m <- addMarkers(m, lng=-116.18, lat=51.4253, popup="Lake Louise, the jewel of Banff National Park, is famous for its beautiful turquoise colored water that reflects the surrounding mountains and Victoria Glacier on the far shore. Located just a short drive north of the town of Banff, the lake is an easy day trip from Calgary. From the grand Chateau Lake Louise, there are fabulous views directly across the lake. A walkway runs along the shoreline allowing visitors a lovely place for a leisurely stroll to absorb the atmosphere. Canoe rentals are also available for those who want to paddle out on the lake. From the lakeside path, there are popular hiking trails leading either up the mountain side or beyond the lake towards the glacier.")
+
+m <- addMarkers(m, lng=-117.18, lat=52.09, popup="The Icefields Parkway runs from Lake Louise to Jasper and is one of the most beautiful drives in Canada. This 230-kilometer stretch of highway leads past lakes, mountains, glaciers, and waterfalls, with all kinds of stopping points for visitors to experience the landscape up close. Numerous hiking trails along the way, most of which are day hikes, lead to scenic lookouts over surrounding glaciers or lakes.
+
+One of the main attractions along the Icefields Parkway is the Icefields Centre. This large visitor's center features excellent displays on the Columbia Icefields and looks out over the Athabasca Glacier. From the road, it is difficult to comprehend the layout and size of the icefields, but models and photos at the center offer a unique perspective. Across from the center, it's possible to walk up to the toe of the glacier. Alternatively, tours in specially outfitted buses are available, which drive visitors out onto the glacier. One of the newest attractions is the Glacier Skywalk, a huge observation platform standing 280 meters above the valley below, with a glass floor and glass railings. A shuttle service runs from the Icefields Center to the Glacier Skywalk")
+
+m <- addMarkers(m, lng=-116.1108, lat=51.1921, popup="Beyond Lake Louise, at the end of a scenic 13 kilometer-long twisty mountain road, is Moraine Lake in the Valley of the Ten Peaks. Like Lake Louise, this is another scenic setting with similar turquoise water surrounded by snow-capped peaks, but it is much less visited. It was for many years the location of the image on the reverse side of the old Canadian twenty dollar bill.
+
+Moraine Lake is overshadowed by ten peaks, each more than 3,000 meters high, containing the Wenkchemna Glacier. There is a great view across the lake from an overlook reached by hiking up a short path known as the Rockpile Trail, located near the parking lot. In the spring, the thunder of falling glaciers or landslides can be heard in the distance.")
+
+m <- addMarkers(m, lng=-113.5455, lat=49.0245, popup="The Waterton-Glacier International Peace Park in the Rocky Mountains straddles the border between Alberta and the U.S. state of Montana. On the Canadian side of the border is Waterton Lakes National Park, while on the American side the park is called Glacier National Park. Waterton Lakes is the smaller of the two parks but features some fantastic scenery with mountains and the beautiful Waterton Lake. Overlooking the lake, from a fabulous position on the north shore is the Prince of Wales Hotel, a National Historic Site of Canada. Nearby, is the town site with tourist amenities. Many people come to the park to hike on the alpine trails, camp, or take a sightseeing tour.")
+
+m <- addMarkers(m, lng=-117.5455, lat=52.8, popup="Much like Banff, the name Jasper is associated with both the national park and the town, which lies at the heart of the park. Jasper is the biggest national park in Canada, covering an area of 10,878 square kilometers. It is an area of lakes, waterfalls, mountains, glaciers, and forests, but has a slightly different appearance than the parks and natural areas further south. Both the park and the town of Jasper are less visited than Banff and have a more remote feel, particularly in winter when many facilities in the area are closed. Unlike Banff, the town of Jasper sees very few tourists outside of the peak summer season giving it a much more seasonal character.
+
+Some of the key highlights in Jasper National Park are Maligne Lake, which is frequently pictured in advertisements for the Canadian Rockies, Mount Edith Cavell with the stunning Angel Glacier, and Maligne Canyon. Hiking trails and scenic lookouts can be found throughout the park. In winter, locals enjoy the Marmot Basin Ski Resort.")
+
+m <- addMarkers(m, lng=-115.5455, lat=51.0443, popup="Sunshine Village, located just outside the town of Banff, is one of Alberta's most popular ski resorts, but it is also a beautiful area for hiking and walking in summer. In winter, the hill, which offers a good mix of intermediate and advanced runs, attracts skiers from all over the world. In summer, following the snow melt, the area is open to hikers. Buses transport visitors from the base of the hill where the gondola (functional in winter only) is located, to Sunshine Meadows. From here, there are trails of varying length and visitors have the option of busing or hiking down the hill.")
+
+m <- addMarkers(m, lng=-112.4310, lat=51.2949, popup="Located approximately 140 kilometers northeast of Calgary is the small town of Drumheller, which proudly calls itself the \"Town of the Dinosaurs\". Around 75 million years ago, various species of dinosaurs inhabited this region, and many fossils have been discovered in and around Drumheller. The Royal Tyrrell Museum of Paleontology displays some of the finds and offers an indepth look at the history of the area.
+
+The landscape around Drumheller consists mainly of badlands. There are some interesting hiking trails that lead past hoodoos and through unique rock formations. The \"Dinosaur Trail\" is a driving tour that leads through some of the area's main attractions.")
+
+m <- addMarkers(m, lng=-114.9, lat=50.9, popup="About 80 km west of Calgary, along the four-lane TransCanada Highway 1, there is a turn-off south on Highway 40 into some lovely countryside known as Kananaskis Country. This is a favorite spot for hikers in the summer. Kananaskis Village has resort facilities and a popular golf course.
+
+Peter Lougheed Provincial Park is one of the main highlights of Kananaskis, particularly for those who want to spend some time immersed in nature. The park forms the very heart of the Kananaskis region where elk, bighorn sheep, mountain-goats, grizzly bears, and black bears roam free. It covers 508 square kilometers, which makes it the largest provincial park in Alberta. In summer, locals and visitors are attracted here by the superb mountain scenery, traversed by various trails and dotted with alpine lakes.")
+# Industry
+m <- addMarkers(m, lng=-110.50, lat=58.37, popup=" The Athabasca Oil Sands contain the largest proven reserves of oil in the world outside Saudi Arabia. Natural gas has been found at several points, and in 1999, the production of natural gas liquids (ethane, propane, and butanes) totalled 172.8 million barrels (27.47×106 m3), valued at $2.27 billion. Alberta also provides 13% of all the natural gas used in the United States.")
+
+m <- addMarkers(m, lng=-111.41, lat=49.56, popup=" The Athabasca Oil Sands contain the largest proven reserves of oil in the world outside Saudi Arabia. Natural gas has been found at several points, and in 1999, the production of natural gas liquids (ethane, propane, and butanes) totalled 172.8 million barrels (27.47×106 m3), valued at $2.27 billion. Alberta also provides 13% of all the natural gas used in the United States.")
+
+m <- addMarkers(m, lng=-113.32, lat=53.20, popup=" The Edmonton area, and in particular Nisku is a major centre for manufacturing oil and gas related equipment. As well Edmonton's Refinery Row is home to a petrochemical industry.
+
+According to a Statistics Canada report Alberta's manufacturing sales year-over-year sales fell 13.2 per cent, with a loss of almost four per cent from December to January. Alberta's economy continued to shrink because of the collapse of the oil and gas sector. The petroleum and coal product manufacturing industry is now third- behind food and chemicals.[37]")
+
+m <- addMarkers(m, lng=-111.53, lat=50.33, popup="Owing to the strength of agriculture, food processing was once a major part of the economies of Edmonton and Calgary, but this sector has increasingly moved to smaller centres such as Brooks, the home of XL Foods, responsible for one third of Canada's beef processing in 2011.")
+# Do not remove this m
+m
+```
+
+
+Page 2
+===================================== 
 
 Column {data-width=650}
 -----------------------------------------------------------------------
@@ -33,4 +127,60 @@ Column {data-width=350}
 ```{r}
 
 ```
+
+
+Page 3
+===================================== 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
+Page 4
+===================================== 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
+
 
