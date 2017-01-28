@@ -101,19 +101,79 @@ m
 ```
 
 
-Page 2
+Economy
 ===================================== 
 
-Column {data-width=650}
+Column {data-width=250}
 -----------------------------------------------------------------------
 
-### Chart A
+### Confederation
+
+```{r}
+valueBox(1905, color = rgb(255/255,69/255,0) )
+```
+
+
+### Population (2016 est.)
+
+```{r}
+x <- "4,231,959"
+valueBox(x)
+```
+
+### GDP Billions (2016 est.)
+
+```{r}
+x <- "295.276"
+valueBox(x)
+```
+
+### Energy Industry Contribution (2015)
+
+```{r}
+x = "22.85%"
+valueBox(x)
+```
+
+### Mining, quarrying, and Oil and Gas extraction Contribution (2015)
+
+```{r}
+x = "19.44%"
+valueBox(x)
+
+```
+
+
+### Articles per Day
+
+```{r}
+x = 1
+valueBox(x)
+```
+
+### Values Base 2
+
+```{r}
+valueBox(12)
+```
+
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+
+### Chart B
 
 ```{r}
 
 ```
 
-Column {data-width=350}
+### Chart C
+
+```{r}
+
+```
+
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Chart B
