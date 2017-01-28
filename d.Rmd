@@ -110,7 +110,7 @@ Column {data-width=250}
 ### Confederation
 
 ```{r}
-valueBox(1905, color = rgb(255/255,69/255,0) )
+valueBox(1905, color = rgb(255/255,69/255,0), icon = "fa-legal")
 ```
 
 
@@ -118,45 +118,45 @@ valueBox(1905, color = rgb(255/255,69/255,0) )
 
 ```{r}
 x <- "4,231,959"
-valueBox(x)
+valueBox(x, icon = "fa-user")
 ```
+
+### Unemployment Rate
+
+```{r}
+x = "8.5%"
+valueBox(x, icon = "fa-briefcase")
+```
+
+### Net Exports Billions (2015)
+
+```{r}
+x = "93.1"
+valueBox(x, , icon = "fa-exchange")
+```
+
 
 ### GDP Billions (2016 est.)
 
 ```{r}
 x <- "295.276"
-valueBox(x)
+valueBox(x, icon = "fa-usd" )
 ```
 
-### Energy Industry Contribution (2015)
+### GDP Energy Industry Contribution (2015)
 
 ```{r}
 x = "22.85%"
-valueBox(x)
+valueBox(x, icon = "fa-bolt")
 ```
 
-### Mining, quarrying, and Oil and Gas extraction Contribution (2015)
+### GDP Mining and Oil and Gas Extraction Contribution (2015)
 
 ```{r}
 x = "19.44%"
-valueBox(x)
+valueBox(x, icon = "fa-tint")
 
 ```
-
-
-### Articles per Day
-
-```{r}
-x = 1
-valueBox(x)
-```
-
-### Values Base 2
-
-```{r}
-valueBox(12)
-```
-
 
 Column {data-width=400}
 -----------------------------------------------------------------------
