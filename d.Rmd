@@ -2,19 +2,39 @@
 title: "@ Alberta"
 output: 
   flexdashboard::flex_dashboard:
+    social: [ "twitter", "facebook", "menu" ]
     orientation: columns
     vertical_layout: fill
-    theme: flatly
+    theme: journal
+    navbar:
+      - { icon: "fa-info", href: "https://example.com/about", align: right }
+    
 ---
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
+library(plotly)
+library(dplyr)
+library(base)
+
+Alberta_GDP_Real <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Economy/Raw/Alberta GDP Real.csv")
+
+Alberta_Unemployment <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Economy/Raw/Alberta Workforce.csv")
+
+Alberta_Ages <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Population/Alberta Age Distribution.csv")
+
+Alberta_Ethnicity <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Population/Alberta Ethnicity 2006.csv")
+
+Alberta_RuralvUrban <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Population/Alberta Rural versus Urban.csv")
+
+Alberta_Immagration <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Population/Alberta Immagration.csv")
+
 ```
 
 Overview
 ===================================== 
 
-Column {data-width=350}
+Column {data-width=200}
 -----------------------------------------------------------------------
 
 ### Summary
@@ -25,7 +45,7 @@ Alberta's capital, Edmonton, is near the geographic centre of the province and i
 
 About 290 km (180 mi) south of the capital is Calgary, the largest city in Alberta. Calgary and Edmonton centre Alberta's two census metropolitan areas, both of which have populations exceeding one million,[9] while the province has 16 census agglomerations. Tourist destinations in the province include Banff, Canmore, Drumheller, Jasper and Sylvan Lake.
 
-Column {data-width=650}
+Column {data-width=800}
 -----------------------------------------------------------------------
 
 
@@ -104,15 +124,8 @@ m
 Economy
 ===================================== 
 
-Column {data-width=250}
+Column {data-width=200}
 -----------------------------------------------------------------------
-
-### Confederation
-
-```{r}
-valueBox(1905, color = rgb(255/255,69/255,0), icon = "fa-legal")
-```
-
 
 ### Population (2016 est.)
 
@@ -128,13 +141,12 @@ x = "8.5%"
 valueBox(x, icon = "fa-briefcase")
 ```
 
-### Net Exports Billions (2015)
+### Exports Billions (2015)
 
 ```{r}
 x = "93.1"
-valueBox(x, , icon = "fa-exchange")
+valueBox(x, icon = "fa-exchange")
 ```
-
 
 ### GDP Billions (2016 est.)
 
@@ -143,56 +155,135 @@ x <- "295.276"
 valueBox(x, icon = "fa-usd" )
 ```
 
-### GDP Energy Industry Contribution (2015)
+### Stuff {.no-title}
 
-```{r}
-x = "22.85%"
-valueBox(x, icon = "fa-bolt")
-```
+Alberta's economy is the sum of all economic activity in Alberta, Canada's fourth largest province by population. Although Alberta has a presence in many industries such as agriculture, forestry, education, tourism, finance, and manufacturing, the politics and culture of the province have been closely tied to the production of fossil energy since the 1940s. Alberta-with an estimated 1.4 billion cubic metres of unconventional oil resource in the bituminous oil sands-leads Canada as an oil producer
 
-### GDP Mining and Oil and Gas Extraction Contribution (2015)
+From 1990 to 2003, Alberta's economy grew by 57% compared to 43% for all of Canada-the strongest economic growth of any region in Canada.
 
-```{r}
-x = "19.44%"
-valueBox(x, icon = "fa-tint")
-
-```
-
-Column {data-width=400}
+Column {data-width=800}
 -----------------------------------------------------------------------
 
-### Chart B
+### GDP by Major Categories
 
 ```{r}
+p <- plot_ly(Alberta_GDP_Real, x = ~Year)
+p <- layout(p
+            ,yaxis = list(range = c(0,160000), title = "GDP - Millions") 
+            ,showlegend = T)
 
+p <- add_trace(p, y = ~Alberta_GDP_Real[,2], mode='lines', name = names(Alberta_GDP_Real)[2])
+p <- add_trace(p, y = ~Alberta_GDP_Real[,3], mode='lines', name = names(Alberta_GDP_Real)[3])
+p <- add_trace(p, y = ~Alberta_GDP_Real[,7], mode='lines', name = names(Alberta_GDP_Real)[7])
+p <- add_trace(p, y = ~Alberta_GDP_Real[,10], mode='lines', name = names(Alberta_GDP_Real)[10])
+p <- add_trace(p, y = ~Alberta_GDP_Real[,11], mode='lines', name = names(Alberta_GDP_Real)[11])
+p <- add_trace(p, y = ~Alberta_GDP_Real[,24], mode='lines', name = names(Alberta_GDP_Real)[24])
+p <- add_trace(p, y = ~Alberta_GDP_Real[,25], mode='lines', name = names(Alberta_GDP_Real)[25])
+
+p <- add_trace(p, y = ~Alberta_GDP_Real[,44], mode='lines', name = names(Alberta_GDP_Real)[44])
+p <- add_trace(p, y = ~Alberta_GDP_Real[,60], mode='lines', name = names(Alberta_GDP_Real)[60])
+
+ggplotly(p)
 ```
 
-### Chart C
+### Unemployment Rate
 
 ```{r}
+m <- plot_ly(Alberta_Unemployment, x = ~Year)
+m <- layout(m
+            ,yaxis = list(range = c(0,2500), title = "x1000 People") 
+            ,showlegend = T
+            ,hoverinfo = 'text')
 
+m <- add_trace(m, y = ~Alberta_Unemployment[,3], mode='lines', name = names(Alberta_Unemployment)[3])
+m <- add_trace(m, y = ~Alberta_Unemployment[,4], mode='lines', name = names(Alberta_Unemployment)[4])
+m <- add_trace(m, y = ~Alberta_Unemployment[,5], mode='lines', name = names(Alberta_Unemployment)[5])
+m <- add_trace(m, y = ~Alberta_Unemployment[,6], mode='lines', name = names(Alberta_Unemployment)[6])
+m <- add_trace(m, y = ~Alberta_Unemployment[,7], mode='lines', name = names(Alberta_Unemployment)[7])
+
+
+ggplotly(m)
 ```
 
-Column {data-width=400}
------------------------------------------------------------------------
 
-### Chart B
-
-```{r}
-
-```
-
-### Chart C
-
-```{r}
-
-```
-
-
-Page 3
+Population
 ===================================== 
 
-Column {data-width=650}
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+### Text Commentary {.no-title}
+
+**Growth**
+
+Alberta has experienced a relatively high rate of growth in recent years,[when?] mainly because of its burgeoning economy. Between 2003 and 2004, the province had high birthrates (on par with some larger provinces such as British Columbia), relatively high immigration, and a high rate of interprovincial migration compared to other provinces.[42]
+
+**Diversity**
+
+Alberta has considerable ethnic diversity. In line with the rest of Canada, many immigrants originated from England, Scotland, Ireland, Wales and France, but large numbers also came from other parts of Europe, notably Germany, Ukraine and Scandinavia.[48] According to Statistics Canada, Alberta is home to the second highest proportion (two percent) of Francophones in western Canada (after Manitoba). Despite this, relatively few Albertans claim French as their mother tongue. Many of Alberta's French-speaking residents live in the central and northwestern regions of the province.
+
+Alberta is the third most diverse province in terms of visible minorities after British Columbia and Ontario with 13.9% of the population consisting of visible minorities.[50] Nearly one-fourth of the populations of Calgary and Edmonton belong to a visible minority group.[51]
+
+
+
+
+``` {r}
+```
+
+Column {data-width=800}
+-----------------------------------------------------------------------
+
+### Alberta Ethnicity (2006)
+
+```{r}
+Eth <- plot_ly(Alberta_Ethnicity, labels = ~Ethnic.origin
+               ,values =~Total.responses, type = 'pie'
+               ,textinfo = 'label+percent'
+               ,textposition = 'inside')
+          
+Eth <- layout(Eth,
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+
+Eth
+```
+
+### Alberta Age Distribution
+
+```{r}
+ages <-  filter(Alberta_Ages, Year %in% c(1975,1980,1985,1990,1995,2000,2005,2010,2015))
+ages <-  ages[-2]
+ages <-  ages[-24]
+
+agep <- plot_ly(ages, x = ~Year, y = ~ages$X0.to.4.years, type = 'bar', name = 'X0.to.4.years')
+agep <- add_trace(agep,y = ~ages$X5.to.9.years,   name = '5-9 years')
+agep <- add_trace(agep,y = ~ages$X10.to.14.years, name = '10-14 years')
+agep <- add_trace(agep,y = ~ages$X15.to.19.years, name = '15-19 years')
+agep <- add_trace(agep,y = ~ages$X20.to.24.years, name = '20-24 years')
+agep <- add_trace(agep,y = ~ages$X25.to.29.years, name = '25-29 years')
+agep <- add_trace(agep,y = ~ages$X30.to.34.years, name = '30-34 years')
+agep <- add_trace(agep,y = ~ages$X35.to.39.years, name = '35-39 years')
+agep <- add_trace(agep,y = ~ages$X40.to.44.years, name = '40-44 years')
+agep <- add_trace(agep,y = ~ages$X45.to.49.years, name = '45-49 years')
+agep <- add_trace(agep,y = ~ages$X50.to.54.years, name = '50-54 years')
+agep <- add_trace(agep,y = ~ages$X55.to.59.years, name = '55-59 years')
+agep <- add_trace(agep,y = ~ages$X60.to.64.years, name = '60-64 years')
+agep <- add_trace(agep,y = ~ages$X65.to.69.years, name = '65-69 years')
+agep <- add_trace(agep,y = ~ages$X70.to.74.years, name = '70-74 years')
+agep <- add_trace(agep,y = ~ages$X75.to.79.years, name = '75-79 years')
+agep <- add_trace(agep,y = ~ages$X80.to.84.years, name = '80-84 years')
+agep <- add_trace(agep,y = ~ages$X85.to.89.years, name = '85-89 years')
+
+agep <- layout(agep, yaxis = list(title = 'Count'), barmode = 'stack')
+
+agep
+
+```
+
+Leisure
+===================================== 
+
+Column {data-width=200}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -201,34 +292,7 @@ Column {data-width=650}
 
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
-
-```{r}
-
-```
-
-### Chart C
-
-```{r}
-
-```
-
-Page 4
-===================================== 
-
-Column {data-width=650}
------------------------------------------------------------------------
-
-### Chart A
-
-```{r}
-
-```
-
-Column {data-width=350}
+Column {data-width=800}
 -----------------------------------------------------------------------
 
 ### Chart B
