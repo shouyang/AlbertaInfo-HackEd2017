@@ -16,6 +16,7 @@ library(flexdashboard)
 library(plotly)
 library(dplyr)
 library(base)
+library(timevis)
 
 Alberta_GDP_Real <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Economy/Raw/Alberta GDP Real.csv")
 
@@ -32,6 +33,10 @@ Alberta_Immagration <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd201
 Alberta_National_Park_Attendance <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Culture/National Park Attendance.csv")
 
 Alberta_Air_Travel <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Travel/Alberta - Air Travel.csv")
+
+Alberta_Education_Expenditures <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Education/Alberta Education Expenditures.csv")
+
+Alberta_Post_Secondary_Enrollment <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Education/Alberta Post Secondary Enrollment.csv")
 
 ```
 
@@ -465,3 +470,147 @@ airp <- layout(airp
 airp
 ```
 
+
+
+Education {data-icon="fa-graduation-cap"}
+=====================================
+
+Column {data-width=200}
+-------------------------------------
+
+###
+
+**Overview**
+Education in Alberta is provided through funding from the provincial government.[2] The earliest form of formal education in Alberta is usually preschool which is not mandatory and is then followed by the partially-mandatory kindergarten to Grade 12 (or twelfth grade). This is managed by Alberta Education (also known as the Ministry of Education) which has divided the province into 379 school authorities.[3] Higher education in the province is guided by Alberta Advanced Education.[4]
+
+Alberta has a well developed educational system and is known for having one the best educational systems in Canada, and the world. It has also historically performed well on international ranking tests however recently scores have been declining in some areas causing concerns for alarm.[5]
+
+**K-12**
+The ministry responsible for kindergarten to grade 12 (also known as primary and secondary education) is Alberta Education. The ministry has divided the province into 379 school authorities.[3] The authorities are both public, private, charter, and separate. All school authorities are required to employ teachers who are certificated by Alberta Education under the Executive Director of Teaching & Leadership Excellence.[11] The Ministry is also responsible for setting curriculum, or as it is officially referred to, programs of study.
+
+There are 690 844 students in K-12 enrolled in Alberta as of the 2014/2015 school year.[12]
+
+In accordance with the School Act children are required to attend school from age 6 to 16, roughly kindergarten to Grade 11.[13]
+
+**Higher education**
+Higher education in Alberta may also be referred to as post-secondary or tertiary education .
+
+Alberta's oldest university is the University of Alberta in Edmonton. The University of Calgary, once affiliated with the University of Alberta, gained its autonomy in 1966 and is now the second largest university in Alberta. The University of Lethbridge has campuses in Lethbridge, Calgary, and Edmonton. Athabasca University focuses on distance learning. In September 2009, the Government of Alberta designated two colleges as universities, creating MacEwan University in Edmonton and Mount Royal University in Calgary.
+
+There are 13 colleges that receive direct public funding, along with two technical institutes, NAIT and SAIT.[31] There is also a large and active private sector of post-secondary institutions, including DeVry University.
+
+Column {data-width=400}
+-------------------------------------
+
+### K-12 Goverment Expenditure
+
+```{r}
+edp <- plot_ly(Alberta_Education_Expenditures, x = ~Year, y =~Public.Schools, name =  'Public.Schools',type = 'scatter', mode = 'lines')
+edp <- add_trace(edp,y = ~Alberta_Education_Expenditures$Private.schools, name = 'Private.schools',mode = 'lines')
+
+
+edp <- layout(edp
+            ,yaxis = list(title="x1000 Dollars") 
+            ,showlegend = T)
+edp
+```
+
+###
+
+**History**
+The first schools in what is now Alberta were parochial, that is, they were organized, owned and operated by Church clergy, missionaries, or authorities, both Roman Catholic and Protestant. A nominal fee was often charged for the attendance of students at these schools, and the fee was more often waived, as an act of charity or as an act of proselytizing, or as an act of local solidarity.[citation needed]
+
+The first "free" school (which would now be called a public school) in what is now Alberta, was established in the Hamlet of Edmonton, in what was then Northwest Territories, in early 1881. The school was established before the Northwest Territories had a Territorial Assembly, and before there was any law for the Territory respecting schools, or local government, or local taxation. The people of the Hamlet of Edmonton elected trustees to govern the establishment and operation of the school, and submitted to an informal local taxation entirely on the basis of local solidarity.[citation needed]
+
+Between 1883 and 1905 a system of education developed in Alberta by which public education was available in every community once the local population initiated its introduction; and separate school education could be provided subsequently, provided certain conditions were met. This system, by which public education was to be universally available and separate school education available under certain conditions, was the system which the federal government of Sir Wilfrid Laurier enshrined in the constitution of Alberta (the Alberta Act) in 1905.[citation needed]
+
+The most recent significant development in the governance of education in Alberta has been the emergence of Francophone education authorities in response to the adoption of the Canadian Charter of Rights and Freedoms (1982). There are now five Francophone authorities in Alberta. In the south a public Francophone authority and a separate Francophone authority share coterminous boundaries. In the north there are three authorities which provide both public and separate school education. The Francophone authorities, together, cover the province, but they are not required to provide Francophone education from place to place, except where numbers warrant, and it is the responsibility of the authority to decide whether numbers warrant
+
+Column {data-width=400}
+-------------------------------------
+
+### Post Secondary Enrollment
+
+```{r}
+sedup <- plot_ly(Alberta_Post_Secondary_Enrollment, x = ~Year, y = ~Alberta_Post_Secondary_Enrollment$Personal.improvement.and.leisure..0., type = 'bar', name = 'Personal improvement and leisure')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Education..1., name = 'Education')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Visual.and.performing.arts.and.communications.technologies..2., name = 'Visual & Performing Arts')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Humanities..3., name = 'Humanities')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Social.and.behavioural.sciences.and.law..4., name = 'Social,Behavioural Sciences & Law')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Business..management.and.public.administration..5.., name = 'Business,Management,Administration')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Physical.and.life.sciences.and.technologies..6., name = 'Life Sciences')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Mathematics..computer.and.information.sciences..7.., name = 'Maths, Computer and information sciences')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Architecture..engineering.and.related.technologies..8.., name = 'Architecture..engineering.and.related.technologies')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Agriculture..natural.resources.and.conservation..9.., name = 'Agriculture..natural.resources.and.conservation')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Health.and.related.fields..10., name = 'Health')
+sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Personal..protective.and.transportation.services..11.., name = 'Personal..protective.and.transportation.services')
+
+
+sedup <- layout(sedup, yaxis = list(title = 'Count'), barmode = 'stack')
+
+sedup
+```
+
+
+###
+
+Post-Secondary institutions in Alberta have been established in response to geographic population growth. In the beginning, there was only one university in the province, but satellite campuses were established as the population in other parts of the province grew. Later, these satellite campuses became universities that met the educational needs of the province's growing urban centres. In the 1960s, colleges sprouted, enabling access to higher education in rural areas.
+
+Improving access is done not only through geography expansion but also by increasing transferability or articulation of courses and programs between post-secondary institutions. Historically, students completed programs at a single institution. However, over time students have become increasingly mobile, attending more than one post-secondary institution throughout the course of their academic lives. The province has supported and encouraged this kind of student mobility by developing college programs that transfer to larger urban post-secondary institutions where degrees can be completed.
+
+In May 2013, the Albertan Progressive Conservative Party released a document commissioned by Alison Redford, Premier at the time, entitled Provincial Dual Credit Strategy: Call to Action. This short policy detailed the party's vision for dual credit opportunities as they related to high school students transitioning to higher education on a career path, and included two phases: "From Vision to Action" and "From Implementation to Sustainability". Redford committed $11 million over three years to fund the development of this plan.
+
+Changing demographics in Alberta are likely to have a profound effect on post-secondary education. The majority of the population growth in Alberta is its urban centres - Edmonton, Calgary, Red Deer and Lethbridge - while the proportion of people living in small towns and rural areas is declining. Institutions based in rural communities will likely have challenges meeting enrollment targets while institution in urban centres will face pressure in having enough capacity.
+
+History & Governance {data-icon="fa-university"}
+=====================================
+
+Column {data-width=200}
+-------------------------------------
+
+###
+The Government of Alberta is organized as a parliamentary democracy with a unicameral legislature. Its unicameral legislature-the Legislative Assembly-consists of eighty-seven members elected first past the post (FPTP) from single-member constituencies.[87]
+
+Locally municipal governments and school boards are elected and operate separately. Their boundaries do not necessarily coincide.
+
+The current premier is Rachel Notley, sworn in on May 24, 2015.
+
+The previous premier was Jim Prentice, who became the leader of the then governing Progressive Conservatives on September 6, 2014 following the resignation of Alison Redford and the interim leadership of Dave Hancock. Prentice was sworn in as the 16th Premier of Alberta on September 15, 2014. He called an early election on May 5, 2015 in which the opposition New Democratic Party (NDP) won a majority of the seats. Prentice immediately resigned his seat and leadership of the PC party, but remained premier until Notley was sworn in on May 24, 2015.
+
+Alberta's elections have tended to yield much more conservative outcomes than those of other Canadian provinces. Since the 1960s, Alberta has had three main political parties, the Progressive Conservatives ("Conservatives" or "Tories"), the Liberals, and the social democratic New Democrats. The Wildrose Party, a more conservative party formed in early 2008, gained much support in 2012 election and became the official opposition, a role it still holds today. The strongly conservative Social Credit Party was a power in Alberta for many decades, but fell from the political map after the Progressive Conservatives came to power in 1971.
+
+For 44 years the Progressive Conservatives governed Alberta. They lost the 2015 election to the NDP, signalling a possible shift to the left in the province, also indicated by the election of progressive mayors in both of Alberta's major cities.[88] Since becoming a province in 1905, Alberta has seen only four changes of government - only five parties have governed Alberta: the Liberals, from 1905 to 1921; the United Farmers of Alberta, from 1921 to 1935; the Social Credit Party, from 1935 to 1971, the Progressive Conservative Party, from 1971 to 2015: and the currently governing Alberta New Democratic Party.
+
+Government revenue comes mainly from royalties on non-renewable natural resources (30.4%), personal income taxes (22.3%), corporate and other taxes (19.6%), and grants from the federal government primarily for infrastructure projects (9.8%).[89] Albertans are the lowest-taxed people in Canada, and Alberta is the only province in Canada without a provincial sales tax (but residents are still subject to the federal sales tax, the Goods and Services Tax of 5%). It is also the only Canadian province to have a flat tax for personal income taxes, which is 10% of taxable income.[90] This is likely to change with the election of an NDP government.[91]
+
+Column {data-width=800}
+-------------------------------------
+
+### Timeline
+
+```{r}
+
+
+timeline <- data.frame(
+  id      = 1:5,
+  content = c("Elections: 4 Sucessive Liberal Terms"
+              ,"Elections: 3 Sucessive United Farmers Terms"
+              ,"Elections: 9 Sucessive Social Credit Terms"
+              ,"Elections: 12 Sucessive Conservative Terms"
+              ,"Elections: First NDP Term"),
+  start   = c("1905-01-01"
+              ,"1917-01-01"
+              ,"1930-01-01"
+              ,"1967-01-01"
+              ,"2015-02-14"),
+  end     = c("1917-01-01"
+              ,"1930-01-01"
+              ,"1967-01-01"
+              ,"2015-02-14"
+              ,NA)
+)
+
+timevis(timeline)
+```
+
+Test Text
