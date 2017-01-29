@@ -2,7 +2,7 @@
 title: "@ Alberta"
 output: 
   flexdashboard::flex_dashboard:
-    social: [ "twitter", "facebook", "menu" ]
+    social: [ "twitter", "facebook"]
     orientation: columns
     vertical_layout: fill
     theme: journal
@@ -29,9 +29,11 @@ Alberta_RuralvUrban <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd201
 
 Alberta_Immagration <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Population/Alberta Immagration.csv")
 
+Alberta_National_Park_Attendance <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Culture/National Park Attendance.csv")
+
 ```
 
-Overview
+Overview {data-icon="fa-line-map"} 
 ===================================== 
 
 Column {data-width=200}
@@ -121,7 +123,7 @@ m
 ```
 
 
-Economy
+Economy {data-icon="fa-line-chart"}
 ===================================== 
 
 Column {data-width=200}
@@ -151,7 +153,7 @@ valueBox(x, icon = "fa-exchange")
 ### GDP Billions (2016 est.)
 
 ```{r}
-x <- "295.276"
+x <- "295,276"
 valueBox(x, icon = "fa-usd" )
 ```
 
@@ -206,7 +208,7 @@ ggplotly(m)
 ```
 
 
-Population
+Population {data-icon="fa-user"}
 ===================================== 
 
 Column {data-width=200}
@@ -280,31 +282,164 @@ agep
 
 ```
 
-Leisure
+Leisure {data-icon="fa-bookmark"}
 ===================================== 
 
 Column {data-width=200}
 -----------------------------------------------------------------------
 
-### Chart A
+### Major Lakes
+
+```{r}
+x = "12"
+valueBox(x, icon = "fa-tint")
+```
+
+### Major Ski Locations
+
+```{r}
+x = "7"
+valueBox(x)
+```
+
+### Major Museums
+
+```{r}
+x = "7"
+valueBox(x, icon = "fa-home")
+```
+
+### National Parks
+
+```{r}
+x = "5"
+valueBox(x, icon = "fa-bicycle")
+```
+
+
+### Provincal Parks
+
+```{r}
+x = "69"
+valueBox(x, icon = "fa-binoculars")
+```
+
+
+### UNESCO World heritage sites
+
+```{r}
+x = "5 out of 13"
+valueBox(x, icon = "fa-star-o")
+```
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+
+### {.no-title}
+
+**Mountains**
+
+The Canadian Rockies in Alberta's south-west are a major attraction for climbing and hiking, with an extensive park system and mountain peaks reaching over 3000 m. The Kananaskis Country park system has numerous trails for hiking and horseback riding, and rafting is done on some of the rivers.
+
+**Skiing**
+
+Alberta is an important destination for tourists who love to ski. It boasts several world-class ski resorts, such as Nakiska and Fortress in Kananaskis Country, Sunshine Village, Mount Norquay and Lake Louise Mountain Resort in the Banff area or Marmot Basin near Jasper. Canada Olympic Park, with its downhill ski and ski jumping facilities, is located in the city of Calgary.
+
+**Hunting and fishing**
+
+Hunters and fishermen from around the world are able to take home impressive trophies and tall tales from their experiences in Alberta's wilderness. The Bow River is famous for fly fishing and its trout population. Many of Alberta's lakes contain amenities for fishing, such as campgrounds and boat launches.
+
+**Museums**
+
+*The Royal Alberta Museum, in Edmonton is the official provincial museum and largest museum in western Canada.
+*The Galt Museum & Archives is the primary museum in Lethbridge, and is the largest museum in the province south of Calgary.
+*The Heritage Park Historical Village is a historical park located in Calgary. The park is located on 66 acres (267,000 m2) of parkland on the banks of the Glenmore Reservoir, along the city's southwestern edge. It is one of the city's most visited tourist attractions.
+*The Michelsen Farmstead is a typical farmstead of the 1890s era, located in the National Historic Site of Canada of Stirling. It was declared a Provincial Historic Site of Alberta in 2001, and has been restored back to its original 19th century Victorian style.
+
+**National and provincial parks**
+
+Five national parks are located in the province of Alberta, with Banff, Jasper, Waterton Lakes and Elk Island National Park being the most popular tourist destinations. 69 provincial parks, 33 wildland provincial parks, 248 provincial recreation areas, 16 ecological reserves, 3 wilderness areas, 149 natural areas and a heritage rangeland are also protected on a provincial level.
+
+Alberta also contains stunning scenery, including 5 of Canada's 13 UNESCO World heritage sites. These are Canadian Rocky Mountain Parks (includes Banff and Jasper National Parks), Waterton-Glacier International Peace Park, Wood Buffalo National Park, Dinosaur Provincial Park and Head-Smashed-In Buffalo Jump.
+
+**Railway**
+
+Located in East-Central Alberta is Alberta Prairie Railway Excursions, a popular tourist attraction operated out of Stettler that draws visitors from around the world. It boasts one of the few operable steam trains in the world, offering trips through the rolling prairie scenery.
+
+Another popular tourist attraction located near the National Historic Site of Canada of Stirling is the Galt Historic Railway Park A restored 1890 North West Territories International Train Station, the station has many Displays of life and travel in the 1880s. The station was moved from its former location in Coutts, Alberta, Canada, and Sweetgrass, Montana, USA border to the current location near Stirling in 2000.
+
+
+
+Column {data-width=400}
+-----------------------------------------------------------------------
+
+
+### National Park Attendance 
 
 ```{r}
 
+attp <- plot_ly(Alberta_National_Park_Attendance, x = ~Location, y = ~Alberta_National_Park_Attendance$Banff, type = 'bar', name = 'Banff')
+attp <- add_trace(attp,y = ~Alberta_National_Park_Attendance$Jasper,   name = 'Jasper')
+attp <- add_trace(attp,y = ~Alberta_National_Park_Attendance$Waterton.Lakes, name = 'Waterton Lakes')
+attp <- add_trace(attp,y = ~Alberta_National_Park_Attendance$Elk.Island, name = 'Elk Island')
+attp <- add_trace(attp,y = ~Alberta_National_Park_Attendance$Wood.Buffalo, name = 'Wood Buffalo')
+
+attp <- layout(attp
+               ,yaxis = list(title = '1000\'s of Vistors')
+               ,xaxis = list(categoryorder = "array", categoryarray = Alberta_National_Park_Attendance$Location)
+               ,barmode = 'stack'
+               )
+
+attp
+
+
 ```
+
+### Moraine Lake in Banff National Park
+
+![](https://upload.wikimedia.org/wikipedia/commons/c/c5/Moraine_Lake_17092005.jpg)
+
+Travel {data-icon="fa-road"}
+=====================================
+
+Column {data-width=200}
+-----------------------------------------------------------------------
+
+### Roads & Highways
+
+```{r}
+x = "181,000 km"
+valueBox(x, icon = "fa-car")
+```
+
+
+### Railways
+
+```{r}
+x = "9,000 km"
+valueBox(x, icon = "fa-train")
+```
+
+### 3rd Busiest Airport in Canda
+
+```{r}
+x = "Calgary Int."
+valueBox(x, icon = "fa-plane")
+```
+
+### 5th Busiest Airport in Canda
+
+```{r}
+x = "Edmonton Int."
+valueBox(x, icon = "fa-plane")
+```
+
+###
+
+Calgary's airport primarily serves the Canadian prairie provinces (Alberta, Saskatchewan and Manitoba) for connecting flights to British Columbia, eastern Canada, 15 major US centres, nine European airports, one Asian airport and four destinations in Mexico and the Caribbean.[106] Edmonton's airport acts as a hub for the Canadian north and has connections to all major Canadian airports as well as 10 major US airports, 3 European airports and 6 Mexican and Caribbean airports.[107]
+
 
 Column {data-width=800}
 -----------------------------------------------------------------------
 
-### Chart B
-
-```{r}
-
-```
-
-### Chart C
-
-```{r}
-
-```
-
-
+### Side B
