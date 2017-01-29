@@ -31,6 +31,8 @@ Alberta_Immagration <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd201
 
 Alberta_National_Park_Attendance <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Culture/National Park Attendance.csv")
 
+Alberta_Air_Travel <- read.csv("C:/Users/shouyang/Desktop/AlbertaInfo-HackEd2017/Data/Travel/Alberta - Air Travel.csv")
+
 ```
 
 Overview {data-icon="fa-line-map"} 
@@ -442,4 +444,24 @@ Calgary's airport primarily serves the Canadian prairie provinces (Alberta, Sask
 Column {data-width=800}
 -----------------------------------------------------------------------
 
-### Side B
+### Air Traffic In Alberta
+
+```{r}
+airp <- plot_ly(Alberta_Air_Travel, x = ~Month, y = ~Edmonton.International.Total, name = 'Edmonton International Total')
+airp <- add_trace(airp,y = ~Alberta_Air_Travel$Edmonton.International.Total,   name = 'Edmonton International Total',mode = 'lines')
+airp <- add_trace(airp,y = ~Alberta_Air_Travel$E.Domestic,   name = 'E-Domestic',mode = 'lines')
+airp <- add_trace(airp,y = ~Alberta_Air_Travel$E.Transborder, name = 'E-Transborder',mode = 'lines')
+airp <- add_trace(airp,y = ~Alberta_Air_Travel$E.International, name = 'E-International',mode = 'lines')
+airp <- add_trace(airp,y = ~Alberta_Air_Travel$Calgary.International.Total, name = 'Calgary International Total',mode = 'lines')
+airp <- add_trace(airp,y = ~Alberta_Air_Travel$C.Domestic, name = 'C Domestic',mode = 'lines')
+airp <- add_trace(airp,y = ~Alberta_Air_Travel$C.Transborder, name = 'C Transborder',mode = 'lines')
+airp <- add_trace(airp,y = ~Alberta_Air_Travel$C.International, name = 'C International',mode = 'lines')
+
+airp <- layout(airp
+               ,yaxis = list(title = '1000\'s of arrivals and departures')
+               ,xaxis = list(categoryorder = "array", categoryarray = Alberta_Air_Travel$Month)
+               )
+
+airp
+```
+
