@@ -67,19 +67,19 @@ m <- leaflet()
 m <- addTiles(m)
 
 # Cities 
-m <- addMarkers(m, lng=-113.4909, lat=53.5444, popup="Edmonton is a cultural, governmental and educational centre. It hosts a year-round slate of festivals, reflected in the nickname Canadas Festival City. It is home to North America\'s largest mall, West Edmonton Mall (the world\'s largest mall from 1981 until 2004),[20] and Fort Edmonton Park, Canada\'s largest living history museum.")
+m <- addMarkers(m, lng=-113.4909, lat=53.5444, popup="Edmonton is a cultural, governmental and educational centre. It hosts a year-round slate of festivals, reflected in the nickname Canadas Festival City. It is home to North America\'s largest mall, West Edmonton Mall (the world\'s largest mall from 1981 until 2004), and Fort Edmonton Park, Canada\'s largest living history museum.") 
 
 m <- addMarkers(m, lng=-114.0618, lat=51.0480, popup="Calgary is a city in the Canadian province of Alberta. It is situated at the confluence of the Bow River and the Elbow River in the south of the province, in an area of foothills and prairie, about 80 km (50 mi) east of the front ranges of the Canadian Rockies. In the 2011 census, the City of Calgary had a population of 1,096,833 and a metropolitan population of 1,214,839, making it the largest city in Alberta, and the third-largest municipality and fifth-largest census metropolitan area (CMA) in Canada.
 
-The economy of Calgary includes activity in the energy, financial services, film and television, transportation and logistics, technology, manufacturing, aerospace, health and wellness, retail, and tourism sectors.[11] The Calgary CMA is home to the second-highest number of corporate head offices in Canada among the country's 800 largest corporations.")
+The economy of Calgary includes activity in the energy, financial services, film and television, transportation and logistics, technology, manufacturing, aerospace, health and wellness, retail, and tourism sectors. The Calgary CMA is home to the second-highest number of corporate head offices in Canada among the country's 800 largest corporations.")
 
-m <- addMarkers(m, lng=-111.2249, lat=56.43, popup="Fort McMurray is a population centre, technically classified as an urban service area, in the Regional Municipality (RM) of Wood Buffalo in Alberta, Canada.[12][13] It is located in northeast Alberta, in the middle of the Athabasca oil sands, surrounded by boreal forest. It has played a significant role in the development of the national petroleum industry. A severe wildfire in May 2016 led to the evacuation of its residents and caused widespread damage.
+m <- addMarkers(m, lng=-111.2249, lat=56.43, popup="Fort McMurray is a population centre, technically classified as an urban service area, in the Regional Municipality (RM) of Wood Buffalo in Alberta, Canada.It is located in northeast Alberta, in the middle of the Athabasca oil sands, surrounded by boreal forest. It has played a significant role in the development of the national petroleum industry. A severe wildfire in May 2016 led to the evacuation of its residents and caused widespread damage.
 
-Formerly a city, Fort McMurray became an urban service area when it amalgamated with Improvement District No. 143 on April 1, 1995, to create the Municipality of Wood Buffalo (renamed the RM of Wood Buffalo on August 14, 1996).[14] Despite its current official designation of urban service area, many locals, politicians and the media still refer to Fort McMurray as a city. Fort McMurray was known simply as McMurray between 1947 and 1962.")
+Formerly a city, Fort McMurray became an urban service area when it amalgamated with Improvement District No. 143 on April 1, 1995, to create the Municipality of Wood Buffalo (renamed the RM of Wood Buffalo on August 14, 1996).Despite its current official designation of urban service area, many locals, politicians and the media still refer to Fort McMurray as a city. Fort McMurray was known simply as McMurray between 1947 and 1962.")
 
 m <- addMarkers(m, lng=-118.4741, lat=55.1015, popup="Grande Prairie is a city in northwest Alberta, Canada within the southern portion of an area known as Peace River Country. It is located at the intersection of Highway 43 (part of the CANAMEX Corridor) and Highway 40 (the Bighorn Highway), approximately 456 km (283 mi) northwest of Edmonton. The city is surrounded by the County of Grande Prairie No. 1.
 
-Grande Prairie is the seventh-largest city in Alberta with a population of 55,032 recorded by the 2011 Census,[4] and was one of Canada's fastest growing cities between 2001 and 2006.[8]
+Grande Prairie is the seventh-largest city in Alberta with a population of 55,032 recorded by the 2011 Census, and was one of Canada's fastest growing cities between 2001 and 2006.
 
 The city adopted the trumpeter swan as an official symbol due to its proximity to the migration route and summer nesting grounds of this bird. For that reason, Grande Prairie is sometimes nicknamed the \"Swan City\". The dinosaur has emerged as an unofficial symbol of the city due to paleontology discoveries in the areas north and west of the Grande Prairie.")
 # Tourism
@@ -122,7 +122,7 @@ m <- addMarkers(m, lng=-111.41, lat=49.56, popup=" The Athabasca Oil Sands conta
 
 m <- addMarkers(m, lng=-113.32, lat=53.20, popup=" The Edmonton area, and in particular Nisku is a major centre for manufacturing oil and gas related equipment. As well Edmonton's Refinery Row is home to a petrochemical industry.
 
-According to a Statistics Canada report Alberta's manufacturing sales year-over-year sales fell 13.2 per cent, with a loss of almost four per cent from December to January. Alberta's economy continued to shrink because of the collapse of the oil and gas sector. The petroleum and coal product manufacturing industry is now third- behind food and chemicals.[37]")
+According to a Statistics Canada report Alberta's manufacturing sales year-over-year sales fell 13.2 per cent, with a loss of almost four per cent from December to January. Alberta's economy continued to shrink because of the collapse of the oil and gas sector. The petroleum and coal product manufacturing industry is now third- behind food and chemicals.")
 
 m <- addMarkers(m, lng=-111.53, lat=50.33, popup="Owing to the strength of agriculture, food processing was once a major part of the economies of Edmonton and Calgary, but this sector has increasingly moved to smaller centres such as Brooks, the home of XL Foods, responsible for one third of Canada's beef processing in 2011.")
 # Do not remove this m
@@ -225,13 +225,13 @@ Column {data-width=200}
 
 **Growth**
 
-Alberta has experienced a relatively high rate of growth in recent years,[when?] mainly because of its burgeoning economy. Between 2003 and 2004, the province had high birthrates (on par with some larger provinces such as British Columbia), relatively high immigration, and a high rate of interprovincial migration compared to other provinces.[42]
+Alberta has experienced a relatively high rate of growth in recent years,[when?] mainly because of its burgeoning economy. Between 2003 and 2004, the province had high birthrates (on par with some larger provinces such as British Columbia), relatively high immigration, and a high rate of interprovincial migration compared to other provinces.
 
 **Diversity**
 
-Alberta has considerable ethnic diversity. In line with the rest of Canada, many immigrants originated from England, Scotland, Ireland, Wales and France, but large numbers also came from other parts of Europe, notably Germany, Ukraine and Scandinavia.[48] According to Statistics Canada, Alberta is home to the second highest proportion (two percent) of Francophones in western Canada (after Manitoba). Despite this, relatively few Albertans claim French as their mother tongue. Many of Alberta's French-speaking residents live in the central and northwestern regions of the province.
+Alberta has considerable ethnic diversity. In line with the rest of Canada, many immigrants originated from England, Scotland, Ireland, Wales and France, but large numbers also came from other parts of Europe, notably Germany, Ukraine and Scandinavia. According to Statistics Canada, Alberta is home to the second highest proportion (two percent) of Francophones in western Canada (after Manitoba). Despite this, relatively few Albertans claim French as their mother tongue. Many of Alberta's French-speaking residents live in the central and northwestern regions of the province.
 
-Alberta is the third most diverse province in terms of visible minorities after British Columbia and Ontario with 13.9% of the population consisting of visible minorities.[50] Nearly one-fourth of the populations of Calgary and Edmonton belong to a visible minority group.[51]
+Alberta is the third most diverse province in terms of visible minorities after British Columbia and Ontario with 13.9% of the population consisting of visible minorities. Nearly one-fourth of the populations of Calgary and Edmonton belong to a visible minority group.
 
 
 
@@ -481,23 +481,23 @@ Column {data-width=200}
 ###
 
 **Overview**
-Education in Alberta is provided through funding from the provincial government.[2] The earliest form of formal education in Alberta is usually preschool which is not mandatory and is then followed by the partially-mandatory kindergarten to Grade 12 (or twelfth grade). This is managed by Alberta Education (also known as the Ministry of Education) which has divided the province into 379 school authorities.[3] Higher education in the province is guided by Alberta Advanced Education.[4]
+Education in Alberta is provided through funding from the provincial government. The earliest form of formal education in Alberta is usually preschool which is not mandatory and is then followed by the partially-mandatory kindergarten to Grade 12 (or twelfth grade). This is managed by Alberta Education (also known as the Ministry of Education) which has divided the province into 379 school authorities. Higher education in the province is guided by Alberta Advanced Education.
 
-Alberta has a well developed educational system and is known for having one the best educational systems in Canada, and the world. It has also historically performed well on international ranking tests however recently scores have been declining in some areas causing concerns for alarm.[5]
+Alberta has a well developed educational system and is known for having one the best educational systems in Canada, and the world. It has also historically performed well on international ranking tests however recently scores have been declining in some areas causing concerns for alarm.
 
 **K-12**
-The ministry responsible for kindergarten to grade 12 (also known as primary and secondary education) is Alberta Education. The ministry has divided the province into 379 school authorities.[3] The authorities are both public, private, charter, and separate. All school authorities are required to employ teachers who are certificated by Alberta Education under the Executive Director of Teaching & Leadership Excellence.[11] The Ministry is also responsible for setting curriculum, or as it is officially referred to, programs of study.
+The ministry responsible for kindergarten to grade 12 (also known as primary and secondary education) is Alberta Education. The ministry has divided the province into 379 school authorities.The authorities are both public, private, charter, and separate. All school authorities are required to employ teachers who are certificated by Alberta Education under the Executive Director of Teaching & Leadership Excellence. The Ministry is also responsible for setting curriculum, or as it is officially referred to, programs of study.
 
-There are 690 844 students in K-12 enrolled in Alberta as of the 2014/2015 school year.[12]
+There are 690 844 students in K-12 enrolled in Alberta as of the 2014/2015 school year.
 
-In accordance with the School Act children are required to attend school from age 6 to 16, roughly kindergarten to Grade 11.[13]
+In accordance with the School Act children are required to attend school from age 6 to 16, roughly kindergarten to Grade 11.
 
 **Higher education**
 Higher education in Alberta may also be referred to as post-secondary or tertiary education .
 
 Alberta's oldest university is the University of Alberta in Edmonton. The University of Calgary, once affiliated with the University of Alberta, gained its autonomy in 1966 and is now the second largest university in Alberta. The University of Lethbridge has campuses in Lethbridge, Calgary, and Edmonton. Athabasca University focuses on distance learning. In September 2009, the Government of Alberta designated two colleges as universities, creating MacEwan University in Edmonton and Mount Royal University in Calgary.
 
-There are 13 colleges that receive direct public funding, along with two technical institutes, NAIT and SAIT.[31] There is also a large and active private sector of post-secondary institutions, including DeVry University.
+There are 13 colleges that receive direct public funding, along with two technical institutes, NAIT and SAIT.There is also a large and active private sector of post-secondary institutions, including DeVry University.
 
 Column {data-width=400}
 -------------------------------------
@@ -518,11 +518,11 @@ edp
 ###
 
 **History**
-The first schools in what is now Alberta were parochial, that is, they were organized, owned and operated by Church clergy, missionaries, or authorities, both Roman Catholic and Protestant. A nominal fee was often charged for the attendance of students at these schools, and the fee was more often waived, as an act of charity or as an act of proselytizing, or as an act of local solidarity.[citation needed]
+The first schools in what is now Alberta were parochial, that is, they were organized, owned and operated by Church clergy, missionaries, or authorities, both Roman Catholic and Protestant. A nominal fee was often charged for the attendance of students at these schools, and the fee was more often waived, as an act of charity or as an act of proselytizing, or as an act of local solidarity.
 
-The first "free" school (which would now be called a public school) in what is now Alberta, was established in the Hamlet of Edmonton, in what was then Northwest Territories, in early 1881. The school was established before the Northwest Territories had a Territorial Assembly, and before there was any law for the Territory respecting schools, or local government, or local taxation. The people of the Hamlet of Edmonton elected trustees to govern the establishment and operation of the school, and submitted to an informal local taxation entirely on the basis of local solidarity.[citation needed]
+The first "free" school (which would now be called a public school) in what is now Alberta, was established in the Hamlet of Edmonton, in what was then Northwest Territories, in early 1881. The school was established before the Northwest Territories had a Territorial Assembly, and before there was any law for the Territory respecting schools, or local government, or local taxation. The people of the Hamlet of Edmonton elected trustees to govern the establishment and operation of the school, and submitted to an informal local taxation entirely on the basis of local solidarity.
 
-Between 1883 and 1905 a system of education developed in Alberta by which public education was available in every community once the local population initiated its introduction; and separate school education could be provided subsequently, provided certain conditions were met. This system, by which public education was to be universally available and separate school education available under certain conditions, was the system which the federal government of Sir Wilfrid Laurier enshrined in the constitution of Alberta (the Alberta Act) in 1905.[citation needed]
+Between 1883 and 1905 a system of education developed in Alberta by which public education was available in every community once the local population initiated its introduction; and separate school education could be provided subsequently, provided certain conditions were met. This system, by which public education was to be universally available and separate school education available under certain conditions, was the system which the federal government of Sir Wilfrid Laurier enshrined in the constitution of Alberta (the Alberta Act) in 1905.
 
 The most recent significant development in the governance of education in Alberta has been the emergence of Francophone education authorities in response to the adoption of the Canadian Charter of Rights and Freedoms (1982). There are now five Francophone authorities in Alberta. In the south a public Francophone authority and a separate Francophone authority share coterminous boundaries. In the north there are three authorities which provide both public and separate school education. The Francophone authorities, together, cover the province, but they are not required to provide Francophone education from place to place, except where numbers warrant, and it is the responsibility of the authority to decide whether numbers warrant
 
@@ -546,7 +546,7 @@ sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Health.and.relat
 sedup <- add_trace(sedup,y = ~Alberta_Post_Secondary_Enrollment$Personal..protective.and.transportation.services..11.., name = 'Personal..protective.and.transportation.services')
 
 
-sedup <- layout(sedup, yaxis = list(title = 'Count'), barmode = 'stack')
+sedup <- layout(sedup, yaxis = list(title = 'Count'), barmode = 'stack', legend = list( font = list(size=7) ) )
 
 sedup
 ```
@@ -569,7 +569,7 @@ Column {data-width=200}
 -------------------------------------
 
 ###
-The Government of Alberta is organized as a parliamentary democracy with a unicameral legislature. Its unicameral legislature-the Legislative Assembly-consists of eighty-seven members elected first past the post (FPTP) from single-member constituencies.[87]
+The Government of Alberta is organized as a parliamentary democracy with a unicameral legislature. Its unicameral legislature-the Legislative Assembly-consists of eighty-seven members elected first past the post (FPTP) from single-member constituencies.
 
 Locally municipal governments and school boards are elected and operate separately. Their boundaries do not necessarily coincide.
 
@@ -581,7 +581,7 @@ Alberta's elections have tended to yield much more conservative outcomes than th
 
 For 44 years the Progressive Conservatives governed Alberta. They lost the 2015 election to the NDP, signalling a possible shift to the left in the province, also indicated by the election of progressive mayors in both of Alberta's major cities.[88] Since becoming a province in 1905, Alberta has seen only four changes of government - only five parties have governed Alberta: the Liberals, from 1905 to 1921; the United Farmers of Alberta, from 1921 to 1935; the Social Credit Party, from 1935 to 1971, the Progressive Conservative Party, from 1971 to 2015: and the currently governing Alberta New Democratic Party.
 
-Government revenue comes mainly from royalties on non-renewable natural resources (30.4%), personal income taxes (22.3%), corporate and other taxes (19.6%), and grants from the federal government primarily for infrastructure projects (9.8%).[89] Albertans are the lowest-taxed people in Canada, and Alberta is the only province in Canada without a provincial sales tax (but residents are still subject to the federal sales tax, the Goods and Services Tax of 5%). It is also the only Canadian province to have a flat tax for personal income taxes, which is 10% of taxable income.[90] This is likely to change with the election of an NDP government.[91]
+Government revenue comes mainly from royalties on non-renewable natural resources (30.4%), personal income taxes (22.3%), corporate and other taxes (19.6%), and grants from the federal government primarily for infrastructure projects (9.8%). Albertans are the lowest-taxed people in Canada, and Alberta is the only province in Canada without a provincial sales tax (but residents are still subject to the federal sales tax, the Goods and Services Tax of 5%). It is also the only Canadian province to have a flat tax for personal income taxes, which is 10% of taxable income.This is likely to change with the election of an NDP government.
 
 Column {data-width=800}
 -------------------------------------
@@ -592,25 +592,53 @@ Column {data-width=800}
 
 
 timeline <- data.frame(
-  id      = 1:5,
+  id      = 1:14,
   content = c("Elections: 4 Sucessive Liberal Terms"
               ,"Elections: 3 Sucessive United Farmers Terms"
               ,"Elections: 9 Sucessive Social Credit Terms"
               ,"Elections: 12 Sucessive Conservative Terms"
-              ,"Elections: First NDP Term"),
+              ,"Elections: First NDP Term"
+              ,"Premier Alexander C. Rutherford's government started work on the governmental infrastructure, especially regarding legal and municipal affairs."
+              ,"Alberta Provincial Legislature officially opened"
+              ,"Oil discovered in Turney Valley"
+              ,"Oil fields discovered at Leduc"
+              ,"Interprovincial pipeline constructed"
+              ,"Exploration began of Athabasca tarsands"
+              ,"West Edmonton Mall opened, became world's largest shopping center"
+              ,"Winter Olympics held in Calgary"
+              ,"Heavy rainfalls caused flooding, evacuation of 1,500 Calgarians, washed out bridges, damaged 40,000 homes"
+              ),
   start   = c("1905-01-01"
               ,"1917-01-01"
               ,"1930-01-01"
               ,"1967-01-01"
-              ,"2015-02-14"),
+              ,"2015-02-14"
+              ,"1905-01-01"
+              ,"1912-01-01"
+              ,"1914-01-01"
+              ,"1947-01-01"
+              ,"1950-01-01"
+              ,"1964-01-01"
+              ,"1981-01-01"
+              ,"1988-01-01"
+              ,"2005-01-01"
+              ),
   end     = c("1917-01-01"
               ,"1930-01-01"
               ,"1967-01-01"
               ,"2015-02-14"
-              ,NA)
+              ,NA
+              ,NA
+              ,NA
+              ,NA
+              ,NA
+              ,NA
+              ,NA
+              ,NA
+              ,NA
+              ,NA
+              )
 )
 
 timevis(timeline)
 ```
-
-Test Text
